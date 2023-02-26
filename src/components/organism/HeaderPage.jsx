@@ -13,7 +13,7 @@ function HeaderPage() {
                     </div>
                     <div>
                         <Link to="/InicioUser"><WrapperLabel msn="Iniciar sesión" /></Link>
-                        <Link to=""><WrapperLabel msn="Registrarse" /></Link>
+                        <Link to="/InicioTech"><WrapperLabel msn="Registrarse" /></Link>
                     </div>
                 </div>
             </header>
