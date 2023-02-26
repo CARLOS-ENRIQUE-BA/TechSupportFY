@@ -1,22 +1,29 @@
 footer{
     width: 100%;
-    background-image: url(../img/Footer.svg);
-    margin-top: 40px;
+    background-color: #F1BC8C;
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
 }
 footer .redes-footer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+footer .redes-footer img{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
 .container-footer footer{
     max-width: 1200px;
     margin: auto;
 }
 .container-footer-info{
     max-width: 800px;
-    height: 250px;
-    padding-bottom: 16px;
+    height: auto;
+    padding-bottom: 35px;
     margin: auto;
     text-align: center;
     display: flex;
@@ -31,4 +38,8 @@ footer .redes-footer{
     justify-content: bottom;
     align-items: center;
     color: white;
+}
+
+.colortitle{
+    color: #F1BC8C;
 }

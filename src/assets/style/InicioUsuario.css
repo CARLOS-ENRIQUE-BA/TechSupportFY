@@ -5,20 +5,44 @@
     width: 90%;
     margin-bottom: 3%;
 }
+
+.containerLabel{
+    display: flex;
+    padding-left: 5rem;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 3%;
+    text-align: center;
+    justify-content: center;
+}
+
 .containerImg{
     display: flex;
     justify-content: end;
-    width: 50%;
+    width: 70%;
 }
+
 .containerImg2{
     display: flex;
     justify-content: left;
     width: 50%;
 }
+
 .containerText{
     width: 50%;
 }
+
 .containerTitulo{
+    display: flex;
+    padding-left: 5rem;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.containerSubTitle{
     display: flex;
     padding-left: 5rem;
     align-items: center;
@@ -27,6 +51,7 @@
     margin-top: 2.5rem;
     margin-bottom: 3.5rem;
 }
+
 .article-container-cover{
     width: 100%;
     position: relative;
@@ -35,7 +60,39 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.article-container-cover-Landing{
+    width: 100%;
+    position: relative;
+    background-image: url(../img/FondoLanding.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.article-container-cover-Landing-Tech{
+    width: 100%;
+    position: relative;
+    background-image: url(../img/FondoLandingTech.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .container-info-cover{
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-info-cover1{
     max-width: 800px;
     height: 500px;
     margin: auto;
@@ -49,5 +106,19 @@
 }
 .container-info-cover h1{
     color: #fff;
-    margin-top: 6%;
+    margin-top: 8%;
 }
+
+.imgcenter{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+    
+}
+
+.colordelabel{
+    color: #39B6FD; 
+
+}
+
+

@@ -3,7 +3,7 @@ import Logo from '../../assets/img/Logo.svg';
 import "../../assets/style/Header.css";
 import { Link } from "react-router-dom";
 
-function Header() {
+function HeaderPage() {
     return (
         <>
             <header>
@@ -12,10 +12,8 @@ function Header() {
                         <img src={Logo} alt="Logo de la empresa"/>
                     </div>
                     <div>
-                        <Link to=""><WrapperLabel msn="Inicio" /></Link>
-                        <Link to=""><WrapperLabel msn="Consulta" /></Link>
-                        <Link to=""><WrapperLabel msn="Historial de consultas" /></Link>
-                        <Link to=""><WrapperLabel msn="Perfil" /></Link>
+                        <Link to="/InicioUser"><WrapperLabel msn="Iniciar sesión" /></Link>
+                        <Link to=""><WrapperLabel msn="Registrarse" /></Link>
                     </div>
                 </div>
             </header>
@@ -23,4 +21,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default HeaderPage;
