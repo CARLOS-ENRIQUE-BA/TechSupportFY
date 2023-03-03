@@ -12,8 +12,8 @@ function HeaderPage() {
                         <img src={Logo} alt="Logo de la empresa"/>
                     </div>
                     <div>
-                        <Link to="/RegistroUsuario1"><WrapperLabel msn="Iniciar sesión" /></Link>
-                        <Link to="/"><WrapperLabel msn="Registrarse" /></Link>
+                        <Link to="/loginUser"><WrapperLabel msn="Iniciar sesión" /></Link>
+                        <Link to="/registerUser1"><WrapperLabel msn="Registrarse" /></Link>
                     </div>
                 </div>
             </header>

@@ -1,4 +1,4 @@
-import HeaderPage from "../components/organism/HeaderPage";
+import HeaderLandingPage from "../components/organism/HeaderLandingPage";
 import Title from "../components/atoms/Title";
 import Question from "../components/atoms/Question";
 import Paragraph from "../components/atoms/Paragraph";
@@ -10,14 +10,13 @@ import ImgLanding4 from "../assets/img/ImgLanding4.svg";
 import ImgLanding5 from "../assets/img/ImgLanding5.svg";
 import WrapperLabel from "../components/molecules/WrapperLabel";
 import "../assets/style/InicioUsuario.css";
-import '../assets/style/index.css';
 import { Link } from "react-router-dom";
 import Footer from "../components/organism/Footer";
 
 function LandingPage() {
     return (
         <>
-            <HeaderPage/>
+            <HeaderLandingPage/>
             <div class="article-container-cover-Landing">
                 <div class="container-info-cover">
                     <Title>Bienvenido a TechSupportFY</Title>
@@ -26,7 +25,7 @@ function LandingPage() {
             <div>
                 <div>
                     <div className="containerTitulo">
-                        <SubTitle>TechSupportFY te brinda Tips, soluciones y seguridad para tu laptop, usala y cuidala al 100%</SubTitle>
+                        <SubTitle> Tips, soluciones y seguridad para tu laptop, usala y cuidala al 100%</SubTitle>
                     </div>
                     <div className="containerPadre">
                         <div className="containerText">
@@ -92,8 +91,8 @@ function LandingPage() {
                     </div>
                     <div className="containerLabel">
                         <div className="colordelabel">
-                            <Link><WrapperLabel msn="Regístrarse >" /></Link>
-                            <Link><WrapperLabel msn="Iniciar sesión >" /></Link>
+                            <Link to="/registerTech1"><WrapperLabel msn="Regístrarse >" /></Link>
+                            <Link to="/loginTech"><WrapperLabel msn="Iniciar sesión >" /></Link>
                         </div>
                     </div>
 

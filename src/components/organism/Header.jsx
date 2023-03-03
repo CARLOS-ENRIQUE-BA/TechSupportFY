@@ -1,7 +1,8 @@
 import WrapperLabel from "../molecules/WrapperLabel";
-import Logo from '../../assets/img/Logo.svg';
+import Logo from "../atoms/Logo";
 import "../../assets/style/Header.css";
 import { Link } from "react-router-dom";
+import logo from "../../assets/img/Logo.svg";
 
 function Header() {
     return (
@@ -9,7 +10,7 @@ function Header() {
             <header>
                 <div className="container">
                     <div>
-                        <img src={Logo} alt="Logo de la empresa"/>
+                        <Logo img={logo}/>
                     </div>
                     <div>
                         <Link to=""><WrapperLabel msn="Inicio" /></Link>
