@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const StyledLabel = styled.label `
     font-family: "Manrope",Arial,Helvetica Neue,Helvetica,sans-serif;
-    padding-right: 30px;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;

@@ -1,0 +1,17 @@
+.field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: antiquewhite;
+}
+
+.field input{
+    width: 100%;
+    border: none;
+    height: 35px;
+    background-color: antiquewhite;
+    padding-left: 10px;
+    font-family: "Manrope",Arial,Helvetica Neue,Helvetica,sans-serif;
+}

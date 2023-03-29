@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import Header from "../components/organism/Header"
 import Footer from "../components/organism/Footer";
 import Title from "../components/atoms/Title";
+import WrapperLabel from "../components/molecules/WrapperLabel";
 import Question from "../components/atoms/Question";
 import Paragraph from "../components/atoms/Paragraph"
 import SubTitle from "../components/atoms/SubTitle"
@@ -18,33 +20,29 @@ function LandingUser() {
                     <Title>Bienvenido a la guía de usuario</Title>
                 </div>
             </div>
-            <div>
+            <div className="body">
                 <div>
                     <div className="containerTitulo">
-                        <SubTitle>Aprende a utilizar y aprovechar correctamente nuestro soporte técnico.</SubTitle>
+                        <SubTitle>Pasos para usar TechSupportFY</SubTitle>
                     </div>
                     <div className="containerPadre">
                         <div className="containerText">
-                            <Question>¿Qué dudas puedo resolver al inicar una consulta?</Question>
-                            <Paragraph>Las dudas que puedes resolver son ilimitadas, ya que puedes preguntar acerca del sistema operativo windows 10 y 11, también puedes preguntar acerca del hardware de tu laptop, ya que contamos con conocimiento general y especifico sobre laptops de pasada y nueva generación. </Paragraph>
+                            <Question>Guía basica</Question>
+                            <Paragraph>En la parte superior derecha podras encontrar los diferentes apartados de la aplicación, entre ellos los diferentes tipos de marcas a las que le damos soporte.</Paragraph>
                         </div>
                         <div className="containerImg">
                             <img className="containerImg"  src={Imagen01} alt="Imagen uno"/>
                         </div>
                     </div>
                     <div className="containerPadre">
-                        <div>
-                            <Question>¿Qué pasa si quiero saber que solución me brindaron en una consulta pasada?</Question>
-                            <Paragraph>Las consultas pasadas no se eliminan, ya que tenemos un apartado de historial de consultas, para que puedas ver todas tus consultas pasadas, así podrás ahorrarte tiempo y esfuerzó al buscar la solución que ya se te brindó.</Paragraph>
-                        </div>
-                    </div>
-                    <div className="containerPadre">
                         <div className="containerImg2">
                             <img className="containerImg" src={Imagen02} alt="Imagen dos"/>
                         </div>
-                        <div className="containerText">
-                            <Question>¿Qué dudas puedo resolver al inicar una consulta?</Question>
-                            <Paragraph>Las dudas que puedes resolver son ilimitadas, ya que puedes preguntar acerca del sistema operativo windows 10 y 11, también puedes preguntar acerca del hardware de tu laptop, ya que contamos con conocimiento general y especifico sobre laptops de pasada y nueva generación. </Paragraph>
+                        <div className="containerLabel">
+                            <div className="colordelabel">
+                                <Question>Si quieres saber mas acerca de TechSupportFY visita el siguient enelace.</Question>
+                                <Link><WrapperLabel msn="Mas información" /></Link>
+                            </div>
                         </div>
                     </div>
                 </div>

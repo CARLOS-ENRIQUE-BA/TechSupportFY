@@ -1,45 +1,100 @@
+.body{
+    padding: 0 7%;
+}
+
 .containerPadre{
     display: flex;
-    padding-left: 5rem;
+    justify-content: center;
     align-items: center;
-    width: 90%;
-    margin-bottom: 3%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+.containerTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 10% 0;
+}
+@media screen and (max-width:767px){
+    .containerPadre{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .containerTitulo {
+        padding: 0;
+    }
+}
+.containerPadre2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+}
+@media screen and (max-width:767px){
+    .containerPadre2{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+}
+
+.colordelabel a{
+    color: #F1BC8C;
+}
+.colordelabel label{
+    padding: 0;
 }
 
 .containerLabel{
     display: flex;
-    padding-left: 5rem;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin-bottom: 3%;
     text-align: center;
     justify-content: center;
+}
+@media screen and (max-width:767px){
+    .containerLabel {
+        width: auto;
+        padding: 0%;
+    }
 }
 
 .containerImg{
     display: flex;
     justify-content: end;
-    width: 70%;
+    width: 100%;
 }
 
 .containerImg2{
     display: flex;
     justify-content: left;
-    width: 50%;
+    width: 100%;
 }
 
 .containerText{
     width: 50%;
 }
-
-.containerTitulo{
-    display: flex;
-    padding-left: 5rem;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    margin-top: 2.5rem;
-    margin-bottom: 4rem;
+@media screen and (max-width:767px){
+    .containerText {
+        width: auto;
+    }
+    .containerImg2 img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .containerImg img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .containerSubTitle{
@@ -68,6 +123,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .article-container-cover-Landing-Tech{
@@ -89,7 +145,6 @@
     justify-content: top;
     align-items: center;
     position: relative;
-    z-index: 1;
 }
 
 .container-info-cover1{
@@ -102,23 +157,11 @@
     justify-content: top;
     align-items: center;
     position: relative;
-    z-index: 1;
 }
 .container-info-cover h1{
     color: #fff;
     margin-top: 8%;
-}
-
-.imgcenter{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 4rem;
-    
-}
-
-.colordelabel{
-    color: #39B6FD; 
-
+    z-index: 1;
 }
 
 

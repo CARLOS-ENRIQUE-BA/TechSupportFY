@@ -7,7 +7,6 @@ import WrapperInput from '../molecules/WrapperInput'
 import logo2 from '../../assets/img/Logo2.svg'
 import WrapperLabel from "../molecules/WrapperLabel";
 
-
 const StyledRegister1 = styled.div `
     display: flex;
     justify-content: center;
@@ -15,6 +14,7 @@ const StyledRegister1 = styled.div `
     flex-direction: column;
     border-left: solid black;
     padding: 0 7%;
+
     @media screen and (max-width:767px){
         border-left: 0;
         padding: 0;
@@ -26,12 +26,11 @@ const StyledFormRegister1 = styled.form `
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding: 12% 0 0 ;
+    padding: 6% 0;
     @media screen and (max-width:767px){
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 30% 0 0;
     }
 `;
 const StyledDivLogo = styled.div `
@@ -43,6 +42,7 @@ const StyledContainerLabel = styled.div `
 `;
 
 const StyledContainerButton = styled.button `
+    padding-left: 20%;
     border: none;
     width: 70%;
     color: white;
@@ -65,30 +65,42 @@ const StyledContainer = styled.div `
     align-items: center;
 `;
 
-function FormLoginUser() {
+
+
+function FormRegisterUser() {
 
     // const Form = useRef();
+    // const endPoint = 'http://localhost:8080/techuser/create'
     // const navigate = useNavigate();
 
     // const handlerClick = (e) => {
     //     e.preventDefault();
-
     //     const newForm = new FormData(Form.current);
 
-    //     if(newForm.get("correo") === "" || newForm.get("contrasenia") === ""){
-    //         alert("campos vacios");
+    //     const options = {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "Accept": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             name: newForm.get("name"),
+    //             apellido: newForm.get("apellido"),
+    //             correo: newForm.get("correo"),
+    //             contrasenia: newForm.get("contrasenia"),
+    //         }),
     //     }
-    //     fetch('http://localhost:8080/techuser/getAll')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         if(data[2].correo ===  newForm.get('correo') && data[2].contrasenia ===  newForm.get('contrasenia')){
-    //             alert("Bienvenido")
-    //             navigate("/landingUser");
-    //         }
-    //         else{
-    //             alert("Error al iniciar sesión")
-    //         }
-    //     })
+
+    //     if(newForm.get("name") === "" || newForm.get("apellido") === "" || newForm.get("correo") === "" || newForm.get("contrasenia") === ""){
+    //         alert("Cuidado!!! Hay campos vacíos");
+    //     }else{
+    //         fetch(endPoint, options)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             alert(JSON.stringify(data));
+    //         });
+    //         navigate("/loginUser")
+    //     }
     // };
 
     return (
@@ -98,13 +110,15 @@ function FormLoginUser() {
                     <Logo img={logo2} />
                 </StyledDivLogo>
                 <StyledRegister1>
+                    <WrapperInput msn={"Nombre(s)"} type="text" name={"name"}/>
+                    <WrapperInput msn={"Apellido(s)"} type="text" name={"apellido"}/>
                     <WrapperInput msn={"Correo electronico"} type="text" name={"correo"}/>
                     <WrapperInput msn={"Contraseña"} type="password" name={"contrasenia"}/>
                     <StyledContainer>
                         <StyledContainerLabel>
-                            <WrapperLabel msn={"Si aun no tienes una cuenta con nosotros, registrate."}/>
+                            <WrapperLabel msn={"Si ya tienes una cuenta con nosotros, inicia sesión."}/>
                         </StyledContainerLabel>
-                        <StyledContainerButton type="button"><Link to="/landingUser"><WrapperLabel msn="Siguiente"/></Link></StyledContainerButton>
+                        <StyledContainerButton type="button"><Link to="/loginUser"><WrapperLabel msn="Siguiente"/></Link></StyledContainerButton>
                     </StyledContainer>
                 </StyledRegister1>
             </StyledFormRegister1>
@@ -112,4 +126,4 @@ function FormLoginUser() {
     );
 }
 
-export default FormLoginUser;
+export default FormRegisterUser;

@@ -1,0 +1,55 @@
+.linea1 img{
+    width: 40%;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    left: 775px;
+    top: -40px;
+}
+
+.linea2 img{
+    width: 30%;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    left: -20px;
+    bottom: 0px;
+}
+
+@media screen and (max-width:767px){
+    .linea1 img{
+        top: -10px;
+        left: 205px;
+    }
+    .linea2 img{
+        left: -20px;
+        bottom: 0;
+    }
+}
+
+.elipse1 img{
+    width: 5%;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    left: 1239px;
+}
+
+.elipse2 img{
+    width: 10%;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    left: -20px;
+    bottom: 0px;
+}
+
+@media screen and (max-width:767px){
+    .elipse1 img{
+        left: 336px;
+    }
+    .elipse2 img{
+        left: -20px;
+        bottom: 0px;
+    }
+}
