@@ -8,7 +8,7 @@ import logo2 from '../../assets/img/Logo2.svg'
 import WrapperLabel from "../molecules/WrapperLabel";
 
 
-const StyledRegister1 = styled.div `
+const StyledRegister1 = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -21,7 +21,7 @@ const StyledRegister1 = styled.div `
         margin:0 5%;
     }
 `;
-const StyledFormRegister1 = styled.form `
+const StyledFormRegister1 = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,15 +34,15 @@ const StyledFormRegister1 = styled.form `
         padding: 30% 0 0;
     }
 `;
-const StyledDivLogo = styled.div `
+const StyledDivLogo = styled.div`
     width: 33%;
 `;
-const StyledContainerLabel = styled.div `
+const StyledContainerLabel = styled.div`
     padding: 5%;
     text-align: center;
 `;
 
-const StyledContainerButton = styled.button `
+const StyledContainerButton = styled.button`
     border: none;
     width: 70%;
     color: white;
@@ -58,7 +58,7 @@ const StyledContainerButton = styled.button `
         width: 100%;
     }
 `;
-const StyledContainer = styled.div `
+const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,44 +67,56 @@ const StyledContainer = styled.div `
 
 function FormLoginUser() {
 
-    // const Form = useRef();
-    // const navigate = useNavigate();
+    const Form = useRef();
+    const navigate = useNavigate();
 
-    // const handlerClick = (e) => {
-    //     e.preventDefault();
+    const handlerClick = (e) => {
+        e.preventDefault();
 
-    //     const newForm = new FormData(Form.current);
+        const newForm = new FormData(Form.current);
+        if (newForm.get("correo") != '' && newForm.get("contraseña") != '') {
+            fetch('http://52.55.230.220/registro/getAll')
+                .then((response) => response.json())
+                .then((data) => {
+                    if (isValidate(data, newForm.get("correo"), newForm.get("contraseña"))) {
+                        alert('Bienvenido!');
+                        navigate("/landingUser");
+                    } else {
+                        alert('Su correo o contraseña no coinciden, por favor veirfique sus datos.');
+                    }
+                })
+        }
+        else{
+            alert("CUIDADO! Hay campos vacios")
+        }
 
-    //     if(newForm.get("correo") === "" || newForm.get("contrasenia") === ""){
-    //         alert("campos vacios");
-    //     }
-    //     fetch('http://localhost:8080/techuser/getAll')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         if(data[2].correo ===  newForm.get('correo') && data[2].contrasenia ===  newForm.get('contrasenia')){
-    //             alert("Bienvenido")
-    //             navigate("/landingUser");
-    //         }
-    //         else{
-    //             alert("Error al iniciar sesión")
-    //         }
-    //     })
-    // };
+
+    };
+
+    function isValidate(users, correo, contrasenia) {
+        let validated = false;
+
+        let userFound = users.filter(user => user.correo === correo && user.contraseña === contrasenia).map(user => user);
+        if (userFound.length > 0) {
+            validated = true;
+        }
+        return validated;
+    }
 
     return (
         <>
-            <StyledFormRegister1>
+            <StyledFormRegister1 ref={Form}>
                 <StyledDivLogo>
                     <Logo img={logo2} />
                 </StyledDivLogo>
                 <StyledRegister1>
-                    <WrapperInput msn={"Correo electronico"} type="text" name={"correo"}/>
-                    <WrapperInput msn={"Contraseña"} type="password" name={"contrasenia"}/>
+                    <WrapperInput msn={"Correo electronico"} type="text" name={"correo"} />
+                    <WrapperInput msn={"Contraseña"} type="password" name={"contraseña"} />
                     <StyledContainer>
                         <StyledContainerLabel>
-                            <WrapperLabel msn={"Si aun no tienes una cuenta con nosotros, registrate."}/>
+                            <WrapperLabel msn={"Si aun no tienes una cuenta con nosotros, registrate."} />
                         </StyledContainerLabel>
-                        <StyledContainerButton type="button"><Link to="/landingUser"><WrapperLabel msn="Siguiente"/></Link></StyledContainerButton>
+                        <StyledContainerButton type="button" onClick={handlerClick}>Siguiente</StyledContainerButton>
                     </StyledContainer>
                 </StyledRegister1>
             </StyledFormRegister1>

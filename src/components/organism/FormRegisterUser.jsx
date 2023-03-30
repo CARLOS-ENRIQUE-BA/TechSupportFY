@@ -69,56 +69,65 @@ const StyledContainer = styled.div `
 
 function FormRegisterUser() {
 
-    // const Form = useRef();
-    // const endPoint = 'http://localhost:8080/techuser/create'
-    // const navigate = useNavigate();
+    const Form = useRef();
+    const endPoint = 'http://52.55.230.220/registro/create'
+    const navigate = useNavigate();
 
-    // const handlerClick = (e) => {
-    //     e.preventDefault();
-    //     const newForm = new FormData(Form.current);
+    const handlerClick = (e) => {
+        e.preventDefault();
+        const newForm = new FormData(Form.current);
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json");
 
-    //     const options = {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             "Accept": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             name: newForm.get("name"),
-    //             apellido: newForm.get("apellido"),
-    //             correo: newForm.get("correo"),
-    //             contrasenia: newForm.get("contrasenia"),
-    //         }),
-    //     }
+        var raw = JSON.stringify({
+            nombre: newForm.get("nombre"),
+            apellido: newForm.get("apellido"),
+            correo: newForm.get("correo"),
+            contraseña: newForm.get("contraseña"),
+        });
 
-    //     if(newForm.get("name") === "" || newForm.get("apellido") === "" || newForm.get("correo") === "" || newForm.get("contrasenia") === ""){
-    //         alert("Cuidado!!! Hay campos vacíos");
-    //     }else{
-    //         fetch(endPoint, options)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             alert(JSON.stringify(data));
-    //         });
-    //         navigate("/loginUser")
-    //     }
-    // };
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://52.55.230.220/registro/create", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+
+        if(newForm.get("nombre") === "" || newForm.get("apellido") === "" || newForm.get("correo") === "" || newForm.get("contraseña") === ""){
+            alert("Cuidado!!! Hay campos vacíos");
+        }else{
+            fetch(endPoint, options)
+            .then((response) => response.json())
+            .then((data) => {
+                alert(JSON.stringify(data));
+            });
+            navigate("/loginUser")
+        }
+    };
 
     return (
         <>
-            <StyledFormRegister1>
+            <StyledFormRegister1 ref={Form}>
                 <StyledDivLogo>
                     <Logo img={logo2} />
                 </StyledDivLogo>
                 <StyledRegister1>
-                    <WrapperInput msn={"Nombre(s)"} type="text" name={"name"}/>
+                    <WrapperInput msn={"Nombre(s)"} type="text" name={"nombre"}/>
                     <WrapperInput msn={"Apellido(s)"} type="text" name={"apellido"}/>
                     <WrapperInput msn={"Correo electronico"} type="text" name={"correo"}/>
-                    <WrapperInput msn={"Contraseña"} type="password" name={"contrasenia"}/>
+                    <WrapperInput msn={"Contraseña"} type="password" name={"contraseña"}/>
                     <StyledContainer>
                         <StyledContainerLabel>
                             <WrapperLabel msn={"Si ya tienes una cuenta con nosotros, inicia sesión."}/>
                         </StyledContainerLabel>
-                        <StyledContainerButton type="button"><Link to="/loginUser"><WrapperLabel msn="Siguiente"/></Link></StyledContainerButton>
+                        <StyledContainerButton type="button" onClick={handlerClick}>Siguiente</StyledContainerButton>
                     </StyledContainer>
                 </StyledRegister1>
             </StyledFormRegister1>
